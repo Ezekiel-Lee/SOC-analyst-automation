@@ -1,0 +1,27 @@
+{
+  "malware_detection": {
+    "technique": "T1204",
+    "name": "User Execution",
+    "note": "Indicative mapping; validate actual execution chain."
+  },
+  "privilege_escalation": {
+    "technique": "T1068",
+    "name": "Exploitation for Privilege Escalation",
+    "note": "Only use when evidence supports exploitation."
+  },
+  "ransomware_activity": {
+    "technique": "T1486",
+    "name": "Data Encrypted for Impact",
+    "note": "Validate encryption behaviour and impact."
+  },
+  "suspicious_powershell": {
+    "technique": "T1059.001",
+    "name": "PowerShell",
+    "note": "PowerShell use alone is not malicious."
+  },
+  "credential_dumping": {
+    "technique": "T1003",
+    "name": "OS Credential Dumping",
+    "note": "Validate process, access, and endpoint telemetry."
+  }
+}

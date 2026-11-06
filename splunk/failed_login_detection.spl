@@ -1,0 +1,6 @@
+index=* (action=failure OR outcome=failure)
+| stats count as failed_login_count min(_time) as first_seen max(_time) as last_seen by src user dest
+| where failed_login_count >= 5
+| eval event_type="failed_login"
+| convert ctime(first_seen) ctime(last_seen)
+| sort 0 - failed_login_count

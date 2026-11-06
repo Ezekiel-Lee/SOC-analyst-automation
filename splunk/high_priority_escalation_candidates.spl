@@ -1,0 +1,6 @@
+| `get_notable_index`
+| eval urgency=lower(urgency), status=lower(status), severity=lower(severity)
+| where (urgency="critical" OR urgency="high" OR severity="critical")
+    AND status!="closed" AND status!="resolved"
+| table _time event_id rule_name severity urgency status src dest user host security_domain
+| sort 0 - _time

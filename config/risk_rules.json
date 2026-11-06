@@ -1,0 +1,41 @@
+{
+  "severity_points": {
+    "critical": 40,
+    "high": 30,
+    "medium": 15,
+    "low": 5
+  },
+  "urgency_points": {
+    "critical": 30,
+    "high": 25,
+    "medium": 10,
+    "low": 0
+  },
+  "event_type_points": {
+    "malware_detection": 25,
+    "privilege_escalation": 25,
+    "ransomware_activity": 25,
+    "suspicious_powershell": 25,
+    "credential_dumping": 25
+  },
+  "failed_login_thresholds": [
+    {
+      "count": 10,
+      "points": 20
+    },
+    {
+      "count": 5,
+      "points": 10
+    }
+  ],
+  "privileged_account_points": 15,
+  "thresholds": {
+    "escalate": 70,
+    "investigate": 40
+  },
+  "benign_dispositions": [
+    "false_positive",
+    "benign",
+    "known_good"
+  ]
+}
