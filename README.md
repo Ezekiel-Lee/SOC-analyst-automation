@@ -1,12 +1,6 @@
 # SOC L1 Alert Triage & Escalation
 
-A beginner-friendly portfolio project that demonstrates how a SOC Level 1 analyst can
-prioritise security alerts, explain the reasons for a decision, and prepare an escalation
-summary for a SOC Level 2 analyst.
-
-> **Important:** This is a training/demo tool. It does not prove that an event is malicious,
-> replace an analyst, or automatically contain hosts/accounts. Validate all decisions against
-> your organisation's SOC playbooks. The sample data is synthetic.
+A lightweight security orchestration and triage tool designed for SOC Level 1 analysts to filter false positives, enrich alerts, score risk transparently, and automate L2 escalation reporting.
 
 ## Features
 
@@ -61,13 +55,7 @@ python -m unittest discover -s tests -v
 
 ## Splunk integration
 
-The SPL files in `splunk/` are starting examples, not universal drop-in searches.
-Field names, index names, CIM mappings, and the Notable Event schema vary by Splunk
-deployment and Enterprise Security version. Confirm them with your Splunk administrator.
-For a first demo, export a small set of **sanitised** events to JSON and run this tool locally.
-
-Do not commit real customer logs, usernames, IP addresses, tokens, secrets, or incident data.
-Use synthetic or properly anonymised data only.
+The query examples provided in the splunk/ directory serve as starting points. Field names, indexes, and CIM mappings vary across deployments. Export sanitized test events to JSON for local evaluation. Never commit real customer data, internal IPs, or secrets.
 
 ## Risk scoring
 
@@ -84,8 +72,7 @@ approved detection engineering / SOC playbooks and test against labelled data.
 
 ## Suggested next improvements
 
-1. Add your organisation's approved Splunk field mapping.
-2. Add asset criticality and identity context.
-3. Add deduplication and alert grouping.
-4. Add a ticketing-system integration in a test environment.
-5. Add analyst feedback and measure false-positive / missed-escalation rates.
+1. Integrate threat intelligence APIs (e.g., AbuseIPDB, VirusTotal).
+2. Add asset criticality and identity context enrichment.
+3. Implement live webhook alerts for Slack / Microsoft Teams.
+4. Connect automated Jira ticket creation for high-risk escalations.
